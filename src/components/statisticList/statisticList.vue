@@ -29,7 +29,7 @@
         :loading="loading"
         height="650"
         :columns="columns" :data="nowData"></Table>
-      <Page :total="data.length" :page-size="10" @on-change="changepage" styles="text-align: center"
+      <Page :total="data.length" :page-size="10" @on-change="changepage" style="text-align: center"
             show-total show-elevator/>
     </Row>
   </div>
@@ -92,7 +92,7 @@
                         render: (h, params) => {
                             return h(expandRow, {
                                 props: {
-                                    row: params.row,
+                                    row: params.row
                                 }
                             })
                         }
@@ -142,7 +142,7 @@
                         tooltip: true,
                     },
                     {
-                        title: '死亡率',
+                        title: '病死率',
                         key: 'mortality',
                         align: 'center',
                         tooltip: true,
