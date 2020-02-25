@@ -11,7 +11,7 @@
 <template>
   <div>
     <Card style="font-size: 15px">
-      <Carousel v-model="index" loop>
+      <Carousel v-model="index">
         <CarouselItem>
           <div id="myChart" :style="{width: '60vw', height: '400px'}"></div>
         </CarouselItem>
