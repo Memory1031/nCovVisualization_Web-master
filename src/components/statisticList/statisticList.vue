@@ -3,8 +3,8 @@
     <Row>
       <div class="button">
         <DatePicker type="date" size="large" :value="selectedDate" @on-change="changeDate"
-                    :options="options" placeholder="选择日期" style="width: 200px"></DatePicker>
-        <Select v-model="sortBy" style="width:200px" size="large">
+                    :options="options" placeholder="选择日期" style="width: 8vw"></DatePicker>
+        <Select v-model="sortBy" style="width: 10vw" size="large">
           <Option v-for="item in cityList" :value="item.value" :key="item.value">{{ item.label }}</Option>
         </Select>
         <RadioGroup v-model="sortWay" size="large">
@@ -16,7 +16,7 @@
           </Radio>
         </RadioGroup>
         <Input size="large" placeholder="输入地级市名称（选填）"
-               style="width: 200px" clearable
+               style="width: 10vw" clearable
                v-model="cityName"></Input>
         <Button type="success" class="refresh_button" @click="searchForApply">筛选</Button>
       </div>
@@ -24,7 +24,7 @@
     <Row>
       <Table
         size="large"
-        no-data-text="当前没有会议室申请"
+        no-data-text="无法检索到符合条件的城市信息"
         stripe border
         :loading="loading"
         height="650"
@@ -76,7 +76,7 @@
                     },
                     {
                         value: '4',
-                        label: '死亡率'
+                        label: '病死率'
                     },
                     {
                         value: '5',
@@ -84,7 +84,7 @@
                     }
                 ],
                 sortBy: '0',
-                sortWay: 1,
+                sortWay: -1,
                 columns: [
                     {
                         type: 'expand',
@@ -161,7 +161,6 @@
             this.selectedDate = this.yesterday.getFullYear() +  "-" + (this.yesterday.getMonth()> 9 ? (this.yesterday.getMonth() + 1) : "0" +
                 (this.yesterday.getMonth() + 1)) + "-" +(this.yesterday.getDate()> 9 ? (this.yesterday.getDate()) : "0" + (this.yesterday.getDate()));
             this.init("初始化成功！", '');
-            // console.log("上海".indexOf("上海"))
         },
         methods: {
             init(index,type){

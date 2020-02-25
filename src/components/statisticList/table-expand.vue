@@ -11,7 +11,15 @@
 <template>
   <div>
     <Card style="font-size: 15px">
-      <div id="myChart" :style="{width: '60vw', height: '400px'}"></div>
+      <Carousel v-model="index" loop>
+        <CarouselItem>
+          <div id="myChart" :style="{width: '60vw', height: '400px'}"></div>
+        </CarouselItem>
+        <CarouselItem>
+          <div id="myChart1" :style="{width: '60vw', height: '400px'}"></div>
+        </CarouselItem>
+      </Carousel>
+
     </Card>
   </div>
 </template>
@@ -25,6 +33,7 @@
         data(){
             return{
                 cityName: '',
+                index: 0,
                 date: [],
                 totalConfirm: [],
                 remainConfirm: [],
@@ -38,15 +47,21 @@
             this.init();
         },
         methods:{
+            toPoint(percent){
+                let str=percent.replace("%","");
+                return str;
+            },
             init(){
                 let myChart = this.$echarts.init(document.getElementById('myChart'))
+                let myChart1 = this.$echarts.init(document.getElementById('myChart1'))
                 // 绘制图表
                 myChart.setOption({
                     title: {
                         text: 'nCoV-2019 确诊/治愈/死亡'
                     },
                     tooltip: {
-                        trigger: 'axis'
+                        trigger: 'axis',
+
                     },
                     legend: {
                         data: ['现有确诊','累计确诊', '治愈人数', '死亡人数']
@@ -59,7 +74,6 @@
                     },
                     toolbox: {
                         feature: {
-                            magicType: {show: true, type: ['tiled', 'stack']},
                             saveAsImage: {}
                         }
                     },
@@ -75,30 +89,89 @@
                         {
                             name: '现有确诊',
                             type: 'line',
-                            stack: '总量',
+                            // stack: '总量',
                             data: []
                         },
                         {
                             name: '累计确诊',
                             type: 'line',
-                            stack: '总量',
+                            // stack: '总量',
                             data: []
                         },
                         {
                             name: '治愈人数',
                             type: 'line',
-                            stack: '总量',
+                            // stack: '总量',
                             data: []
                         },
                         {
                             name: '死亡人数',
                             type: 'line',
-                            stack: '总量',
+                            // stack: '总量',
+                            data: []
+                        },
+                    ]
+                });
+                myChart1.setOption({
+                    title: {
+                        text: 'nCoV-2019 病死率/治愈率'
+                    },
+                    tooltip: {
+                        trigger: 'axis',
+                        formatter: '{b}<br />{a0}: {c0}%<br />{a1}: {c1}%'
+                    },
+                    legend: {
+                        data: ['治愈率','病死率']
+                    },
+                    grid: {
+                        left: '3%',
+                        right: '4%',
+                        bottom: '3%',
+                        containLabel: true
+                    },
+                    toolbox: {
+                        feature: {
+                            // magicType: {show: true, type: ['tiled', 'stack']},
+                            saveAsImage: {}
+                        }
+                    },
+                    xAxis: {
+                        type: 'category',
+                        boundaryGap: false,
+                        data: []
+                    },
+                    yAxis: {
+                        type: 'value'
+                    },
+                    series: [
+                        {
+                            name: '治愈率',
+                            type: 'line',
+                            // stack: '总量',
+                            label: {
+                                normal: {
+                                    position: 'insideRight',
+                                    formatter: '{c}%'
+                                },
+                            },
+                            data: []
+                        },
+                        {
+                            name: '病死率',
+                            type: 'line',
+                            // stack: '总量',
+                            label: {
+                                normal: {
+                                    position: 'insideRight',
+                                    formatter: '{c}%'
+                                },
+                            },
                             data: []
                         },
                     ]
                 });
                 myChart.showLoading();
+                myChart1.showLoading();
                 this.cityName = this.row.cityname
                 console.log(this.cityName)
                 axios({
@@ -111,8 +184,8 @@
                             this.totalConfirm.push(item.totalconfirm)
                             this.totalDead.push(item.totaldead)
                             this.totalCure.push(item.totalheal)
-                            this.deadRate.push(item.mortality)
-                            this.cureRate.push(item.cureRate)
+                            this.deadRate.push(this.toPoint(item.mortality))
+                            this.cureRate.push(this.toPoint(item.cureRate))
                             this.remainConfirm.push(item.remainConfirm)
                         })
                         myChart.hideLoading();
@@ -132,6 +205,19 @@
                             },{
                                 name: '现有确诊',
                                 data: this.remainConfirm
+                            }]
+                        })
+                        myChart1.hideLoading()
+                        myChart1.setOption({
+                            xAxis: {
+                                data: this.date
+                            },
+                            series: [{
+                                name: '病死率',
+                                data: this.deadRate
+                            },{
+                                name: '治愈率',
+                                data: this.cureRate
                             }]
                         })
                     }else{
