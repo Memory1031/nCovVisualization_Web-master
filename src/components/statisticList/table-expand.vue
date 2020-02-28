@@ -172,7 +172,7 @@
                 });
                 myChart.showLoading();
                 myChart1.showLoading();
-                this.cityName = this.row.cityname
+                this.cityName = this.row.areaname
                 console.log(this.cityName)
                 axios({
                     url: apiRoot + '/epidemic/allDateInfo?name=' + this.cityName,

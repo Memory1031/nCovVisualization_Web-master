@@ -6,6 +6,7 @@ import App from './App'
 import ViewUI from 'view-design';
 import 'view-design/dist/styles/iview.css';
 import echarts from 'echarts'
+import 'echarts/map/js/china'
 import router from './router'
 
 Vue.use(ViewUI);

@@ -112,7 +112,7 @@
                     },
                     {
                         title: "城市名",
-                        key: 'cityname',
+                        key: 'areaname',
                         align: 'center',
                         width: 150,
                         tooltip: true
@@ -181,7 +181,7 @@
                         let nowData_full = false;
                         let num = 1
                         res.data.data.forEach((item) => {
-                            if(type == '' || item.provincename.indexOf(type) != -1 || item.cityname.indexOf(type) != -1)
+                            if(type == '' || item.provincename.indexOf(type) != -1 || item.areaname.indexOf(type) != -1)
                             {
                                 item.newParams = 'number';
                                 item['number'] = num;

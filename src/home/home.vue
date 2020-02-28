@@ -9,8 +9,10 @@
               width="251px"
               @on-select="push">
           <MenuItem name="statisticList">
-            <Icon type="ios-mail"></Icon>
-            <span>统计</span>
+            <span>统计数据</span>
+          </MenuItem>
+          <MenuItem name="chinaMap">
+            <span>地图数据</span>
           </MenuItem>
         </Menu>
       </Sider>
