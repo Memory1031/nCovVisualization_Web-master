@@ -26,16 +26,16 @@
       },
       watch: {
           selectedDate(oldVal, newVal){
-              this.init()
+              this.init(1)
           }
       },
       mounted() {
           this.selectedDate = this.yesterday.getFullYear() +  "-" + (this.yesterday.getMonth()> 9 ? (this.yesterday.getMonth() + 1) : "0" +
               (this.yesterday.getMonth() + 1)) + "-" +(this.yesterday.getDate()> 9 ? (this.yesterday.getDate()) : "0" + (this.yesterday.getDate()));
-          this.init();
+          this.init(0);
       },
       methods: {
-          init() {
+          init(num) {
               let myChart = this.$echarts.init(document.getElementById('myChart'))
               // myChart.showLoading()
               myChart.setOption({ // 进行相关配置
@@ -60,12 +60,21 @@
                       max: 3000, //最大值
                       realtime: false,
                       calculable: true, //是否显示拖拽用的手柄（手柄能拖拽调整选中范围）。
-                      inRange: {
-                          color: ['rgb(244, 208, 0)', 'rgb(229, 131, 8)', 'rgb(220, 87, 18)'] //颜色
-                      },
                       textStyle: {
                           color: '#fff'
                       },
+                  },
+                  dataRange: {
+                      x: 'left',
+                      y: 'center',
+                      splitList: [
+                          {start: 0, end: 0, label: '0人感染或未查询到该地数据', color: '#EFEFEF'},
+                          {start: 1, end: 100, label: '1-100人', color: '#F0CA93'},
+                          {start: 101, end: 500, label: '101-500人', color: '#F59112'},
+                          {start: 501, end: 1000, label: '501-1000人', color: '#EE5213'},
+                          {start: 1001, end: 5000, label: '1001-5000人', color: '#E92601'},
+                          {start: 5001, label: '>5000人', color: '#A81502'},
+                      ],
                   },
                   // 提示框，鼠标移入
                   tooltip: {
@@ -122,10 +131,15 @@
                                       data: dataList
                                   }
                               })
+                              if(num != 0) this.$Message.success("获取数据成功！")
                           }
                       })
 
+                  }else{
+                      this.$Message.error(res.data.message)
                   }
+              }).catch(err => {
+                  this.$Message.error("获取数据失败，请检查网络连接！")
               })
           },
           changeDate(newDate, date){
