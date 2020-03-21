@@ -4,6 +4,8 @@ import HelloWorld from '@/components/HelloWorld'
 import Home from '@/home/home'
 import StatisticList from '@/components/statisticList/statisticList'
 import ChinaMap from '@/components/chinaMap/chinaMap'
+import RiskAssess from '@/components/riskAssess/riskAssess'
+import Route from '@/components/route/route'
 
 Vue.use(Router)
 
@@ -30,6 +32,16 @@ export default new Router({
           path: 'chinaMap',
           component: ChinaMap,
           name: 'chinaMap'
+        },
+        {
+          path: 'riskAssess',
+          component: RiskAssess,
+          name: 'riskAssess'
+        },
+        {
+          path: 'route',
+          component: Route,
+          name: 'route'
         }
       ]
     }
