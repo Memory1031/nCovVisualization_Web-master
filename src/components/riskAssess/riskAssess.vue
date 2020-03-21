@@ -23,9 +23,11 @@
 
 <script>
     import axios from 'axios'
+    import expandRow from './table-expand'
 
     export default {
         name: 'riskAssess',
+        components: {expandRow},
         data() {
             return{
                 loading: false,
@@ -42,6 +44,17 @@
                     }
                 },
                 columns: [
+                    {
+                        type: 'expand',
+                        width: 50,
+                        render: (h, params) => {
+                            return h(expandRow, {
+                                props: {
+                                    row: params.row
+                                }
+                            })
+                        }
+                    },
                     {
                         title: '#',
                         key: 'number',
