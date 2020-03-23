@@ -25,14 +25,6 @@
         data(){
             return{
                 cityName: '',
-                index: 0,
-                date: [],
-                totalConfirm: [],
-                remainConfirm: [],
-                totalDead: [],
-                totalCure: [],
-                deadRate: [],
-                cureRate: []
             }
         },
         mounted(){
@@ -51,16 +43,16 @@
                         trigger: 'item',
                         formatter: function (params) {
                             let ans = "具体参数</br>"
-                            if(params.name == "现存感染人数") {
+                            if(params.name == "每百万人现存感染人数") {
                                 ans += "每百万人现存感染人数: " + params.data.remainConfirm + "</br>"
                                 ans += "排名: " + params.data.remainConfirmRank + "</br>"
                                 ans += "得分: " + params.data.remainScore
-                            }else if(params.name == '死亡率'){
-                                ans += "死亡率: " + params.data.dead + "</br>"
-                                ans += "排名: " + params.data.deadRank + "</br>"
-                                ans += "得分: " + params.data.deadScore
+                            }else if(params.name == '现存感染人数'){
+                                ans += "现存感染人数: " + params.data.remainCount + "</br>"
+                                ans += "排名: " + params.data.remainCountRank + "</br>"
+                                ans += "得分: " + params.data.remainCountScore
                             }else{
-                                ans += "近三日增速: " + params.data.growth + "</br>"
+                                ans += "近十四日新增感染人数: " + params.data.growth + "</br>"
                                 ans += "排名: " + params.data.growthRank + "</br>"
                                 ans += "得分: " + params.data.growthScore
                             }
@@ -70,7 +62,7 @@
                     legend: {
                         orient: 'vertical',
                         left: 'left',
-                        data: ['现存感染人数', '死亡率', '近三日增速']
+                        data: ['每百万人现存感染人数', '现存感染人数', '近十四日新增感染人数']
                     },
                     series: [
                         {
@@ -79,9 +71,9 @@
                             radius: '55%',
                             center: ['50%', '60%'],
                             data: [
-                                {value: 50, name: '现存感染人数', remainConfirm: this.row.remainConfirm, remainConfirmRank: this.row.remainConfirmRank, remainScore: this.row.remainScore},
-                                {value: 20, name: '死亡率', dead: this.row.dead, deadRank: this.row.deadRank, deadScore: this.row.deadScore},
-                                {value: 30, name: '近三日增速', growth: this.row.growth, growthRank: this.row.growthRank, growthScore: this.row.growthScore},
+                                {value: 30, name: '每百万人现存感染人数', remainConfirm: this.row.remainConfirm, remainConfirmRank: this.row.remainConfirmRank, remainScore: this.row.remainScore},
+                                {value: 30, name: '现存感染人数', remainCount: this.row.remainCount, remainCountRank: this.row.remainCountRank, remainCountScore: this.row.remainCountScore},
+                                {value: 40, name: '近十四日新增感染人数', growth: this.row.growth, growthRank: this.row.growthRank, growthScore: this.row.growthScore},
                             ],
                             emphasis: {
                                 itemStyle: {
