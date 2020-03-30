@@ -7,9 +7,13 @@ import ViewUI from 'view-design';
 import 'view-design/dist/styles/iview.css';
 import echarts from 'echarts'
 import 'echarts/map/js/china'
+import XLSX from 'xlsx/dist/xlsx.full.min'
+import 'element-ui/lib/theme-chalk/index.css';
+import ElementUI from 'element-ui';
 import router from './router'
 
 Vue.use(ViewUI);
+Vue.use(ElementUI);
 
 Vue.prototype.$echarts = echarts
 
