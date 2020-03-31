@@ -190,3 +190,19 @@
 .ivu-tabs-tab{
   width: 200px;
 }
+
+.no_border.ivu-table-wrapper{
+  border:none;
+}
+.no_border.ivu-table td,.no_border.ivu-table th{
+  border:none;
+}
+.no_border .ivu-table.ivu-table-default::after,.no_border .ivu-table.ivu-table-default::before{
+  display:none !important;
+}
+.no_border .ivu-table-column-center{
+  border-right: none;
+}
+.no_border .ivu-table-row:last-child .ivu-table-column-center{
+  border-bottom: none;
+}

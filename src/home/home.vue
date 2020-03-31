@@ -3,7 +3,7 @@
     <Layout style="height: 100vh;">
       <Sider :width="250">
         <div class="layout-logo-left">
-          <img src="../assets/img/font.png">
+          <img src="../assets/img/fontNew.png">
         </div>
         <Menu :active-name="activeName"
               width="251px"

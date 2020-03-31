@@ -26,12 +26,11 @@
       <Table
         size="large"
         no-data-text="无法检索到符合条件的城市信息"
-        stripe
         border
         :loading="loading"
         height="650"
         :columns="columns"
-        :data="nowData"
+        :data="scoreData"
       ></Table>
       <Page :total="this.excelLength" :page-size="10" @on-change="changepage" style="text-align: center"
             show-total show-elevator/>
@@ -60,46 +59,48 @@ export default {
                 //         });
                 //     }
                 // },
-                // {
-                //     type: "index",
-                //     width: 75,
-                //     align: "center",
-                //     title: '序号'
-                // },
                 {
-                    title: "地址",
-                    key: "address",
+                    title: "起始地",
+                    key: "start",
                     align: 'center',
-                    // width: 200
+                    width: 400
                 },
-                // {
-                //     title: "城市",
-                //     key: "city"
-                // },
-                // {
-                //     title: "城市评分",
-                //     key: "cityscore"
-                // },
-                // {
-                //     title: "校区",
-                //     key: "campus"
-                // },
-                // {
-                //     title: "校区评分",
-                //     key: "campusscore"
-                // },
-                // {
-                //     title: "总分（火车）",
-                //     key: "tfinal"
-                // },
-                // {
-                //     title: "总分（飞机）",
-                //     key: "pfinal"
-                // },
-                // {
-                //     title: "危险指数",
-                //     key: "grade"
-                // }
+                {
+                    title: "目的地",
+                    key: "end",
+                    align: 'center',
+                    width: 300
+                },
+                {
+                    title: "路径",
+                    align: 'center',
+                    children:[
+                        { title:"主要交通方式",className: 'no_border',render:(h,params)=>{
+                                return h("div", [
+                                    h("Table", {
+                                        props: {
+                                            columns: [{key: "type",align: 'center',}],
+                                            data: params.row.sumCalResponseList,
+                                            "show-header":false,
+                                            "stripe": false,
+                                            "border": false,
+                                        },
+                                    }),
+                                ]);
+                            },align: 'center',},
+                        {title:"得分(5分制)",className: 'no_border',render:(h,params)=>{
+                                return h("div", [
+                                    h("Table", {
+                                        props: {
+                                            columns: [{key:"sumScore",align: 'center'}],
+                                            data: params.row.sumCalResponseList,
+                                            "show-header":false,
+                                        },
+                                    }),
+                                ]);
+                            },align: 'center',}
+                    ],
+                },
             ],
             addressData: [
             ],
@@ -107,6 +108,7 @@ export default {
             dataCount: 0,//总条数
             pageCurrent: 1,//当前页
             nowData: [],
+            scoreData : [],
         };
     },
     methods: {
@@ -115,6 +117,9 @@ export default {
             this.excelLength = 0;
             this.addressData = [];
             this.pageCurrent = 0;
+            this.scoreData = [];
+            this.nowData = []
+            let list = [];
             let num = 0;
             let self = this;
             const types = file.name.split(".")[1];
@@ -150,9 +155,7 @@ export default {
                                         address: address
                                     })
                                     if(num < 10){
-                                        this.nowData.push({
-                                            address: address
-                                        })
+                                        list.push(address)
                                         num++;
                                     }
                                 }
@@ -160,8 +163,27 @@ export default {
                                 address = ''
                             }
                         });
-                        this.loading = false;
-                        console.log(this.addressData)
+                        axios({
+                            url: apiRoot + '/epidemic/assessment',
+                            method: 'post',
+                            data: {
+                                addressList: list
+                            }
+                        }).then((res) => {
+                            if(res.data.code == 200){
+                                res.data.data.assessmentList.forEach((item) => {
+                                    this.scoreData.push(item)
+                                })
+                                console.log(this.scoreData)
+                                this.loading = false;
+                            }else{
+                                this.$Message.error(res.data.message)
+                                this.loading = false;
+                            }
+                        }).catch(e=>{
+                            this.$Message.error("请检查网络连接！");
+                            this.loading = false;
+                        })
                     }
                 }
             });
@@ -189,11 +211,38 @@ export default {
         },
         changepage(index) {
             //需要显示开始数据的index,(因为数据是从0开始的，页码是从1开始的，需要-1)
+            this.scoreData = []
+            this.loading = true;
             let _start = (index - 1) * 10;
             //需要显示结束数据的index
             let _end = index * 10;
             //截取需要显示的数据
             this.nowData = this.addressData.slice(_start, _end);
+            let list = [];
+            this.nowData.forEach((item) => {
+                list.push(item.address)
+            })
+            axios({
+                url: apiRoot + '/epidemic/assessment',
+                method: 'post',
+                data: {
+                    addressList: list
+                }
+            }).then((res) => {
+                if(res.data.code == 200){
+                    res.data.data.assessmentList.forEach((item) => {
+                        this.scoreData.push(item)
+                    })
+                    console.log(this.scoreData)
+                    this.loading = false;
+                }else{
+                    this.$Message.error(res.data.message)
+                    this.loading = false;
+                }
+            }).catch(e=>{
+                this.$Message.error("请检查网络连接！");
+                this.loading = false;
+            })
             //储存当前页
             this.pageCurrent = index;
         },
@@ -204,3 +253,5 @@ export default {
 <style scoped lang="scss">
   @import "routetable";
 </style>
+
+
