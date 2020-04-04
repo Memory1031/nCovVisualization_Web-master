@@ -23,7 +23,7 @@
         no-data-text="无法检索到符合条件的城市信息"
         border
         :loading="loading"
-        height="650"
+        height="600"
         :columns="columns"
         :data="scoreData"
       ></Table>

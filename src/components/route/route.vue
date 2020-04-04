@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <div style="height: 65vh">
     <Tabs size="small" id="tabs">
-      <TabPane label="风险统计" class="markpage">
+      <TabPane label="批量查询" class="markpage">
         <Table></Table>
       </TabPane>
-      <TabPane label="风险查询">
+      <TabPane label="单地查询">
         <Choose class="markpage"></Choose>
       </TabPane>
     </Tabs>
