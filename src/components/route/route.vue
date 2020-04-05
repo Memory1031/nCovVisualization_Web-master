@@ -1,6 +1,9 @@
 <template>
   <div style="height: 65vh">
     <Tabs size="small" id="tabs">
+      <TabPane label="风险评估" class="markpage">
+        <Table2></Table2>
+      </TabPane>
       <TabPane label="批量查询" class="markpage">
         <Table></Table>
       </TabPane>
@@ -14,10 +17,12 @@
 <script>
 import Choose from "./routechoose.vue";
 import Table from "./routetable.vue";
+import Table2 from "./routeDisplay.vue";
 export default {
   components: {
     Choose,
-    Table
+    Table,
+    Table2
   }
 };
 </script>
