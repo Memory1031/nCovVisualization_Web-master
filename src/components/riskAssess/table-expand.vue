@@ -208,7 +208,7 @@
                                     color: 'rgba(255,0,0,1)',          // 文字的颜色。如果设置为 'auto'，则为视觉映射得到的颜色，如系列色。[ default: "#fff" ]
                                     fontSize: 14,           // 文字的字体大小
                                     formatter: function (params) {
-                                        return params.value;
+                                        return params.value + "%";
                                     }
                                 }
                             },

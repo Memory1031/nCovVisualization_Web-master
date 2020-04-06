@@ -81,15 +81,18 @@
   left: -1px;
   top: 0px;
   .layout-logo-left {
-    height: 80px;
     margin-bottom: 10px;
     background: #484848;
     font-size: 22px;
     text-align: center;
     font-family: monospace;
     text-overflow: ellipsis;
-    width: 100%;
+    width: auto;
     overflow: hidden;
+    img{
+      height: 80px;
+      width: auto
+    }
     span {
       line-height: 60px;
       padding: 0 .1em;

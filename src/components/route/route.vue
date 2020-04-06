@@ -1,16 +1,16 @@
 <template>
   <div style="height: 65vh">
-    <Tabs size="small" id="tabs">
-      <TabPane label="风险评估" class="markpage">
+<!--    <Tabs size="small" id="tabs">-->
+<!--      <TabPane label="风险评估" class="markpage">-->
         <Table2></Table2>
-      </TabPane>
-      <TabPane label="批量查询" class="markpage">
-        <Table></Table>
-      </TabPane>
-      <TabPane label="单地查询">
-        <Choose class="markpage"></Choose>
-      </TabPane>
-    </Tabs>
+<!--      </TabPane>-->
+<!--      <TabPane label="批量查询" class="markpage">-->
+<!--        <Table></Table>-->
+<!--      </TabPane>-->
+<!--      <TabPane label="单地查询">-->
+<!--        <Choose class="markpage"></Choose>-->
+<!--      </TabPane>-->
+<!--    </Tabs>-->
   </div>
 </template>
 

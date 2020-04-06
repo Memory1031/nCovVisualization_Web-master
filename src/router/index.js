@@ -6,6 +6,8 @@ import StatisticList from '@/components/statisticList/statisticList'
 import ChinaMap from '@/components/chinaMap/chinaMap'
 import RiskAssess from '@/components/riskAssess/riskAssess'
 import Route from '@/components/route/route'
+import RouteTable from '@/components/routetable/routetable'
+import RouteChoose from '@/components/routechoose/routechoose'
 
 Vue.use(Router)
 
@@ -42,6 +44,16 @@ export default new Router({
           path: 'route',
           component: Route,
           name: 'route'
+        },
+        {
+          path: 'routetable',
+          component: RouteTable,
+          name: 'routetable'
+        },
+        {
+          path: 'routechoose',
+          component: RouteChoose,
+          name: 'routechoose'
         }
       ]
     }
