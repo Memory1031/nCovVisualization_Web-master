@@ -8,7 +8,7 @@
 
 .ivu-menu-item {
   display: flex;
-  background-color: #211F1E;
+  background-color: rgb(22, 54, 94);
   font-size: 16px;
   font-weight: normal;
   align-content: center !important;
@@ -23,7 +23,7 @@
 
 .ivu-menu-submenu-title{
   display: flex;
-  background-color: #211F1E;
+  background-color: rgb(22, 54, 94);
   font-size: 16px;
   font-weight: normal;
   align-content: center !important;
@@ -49,17 +49,17 @@
 }
 
 .ivu-menu-item-selected{
-  background-color: #484848 !important;
+  background-color: rgb(22, 54, 94) !important;
   color: #f5f7f9 !important;
   width: 250px;
 }
 
 .ivu-menu-item-selected:after{
-  background-color: #484848 !important;
+  background-color: rgb(22, 54, 94) !important;
 }
 
 .ivu-layout-sider {
-  $--side-color: #211F1E;
+  $--side-color: rgb(22, 54, 94);
   user-select: none;
   background: $--side-color !important;
   .ivu-menu-custom {

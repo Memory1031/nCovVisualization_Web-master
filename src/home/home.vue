@@ -2,8 +2,8 @@
   <div class="layout">
     <Layout style="height: 100vh;">
       <Sider :width="250">
-        <div class="layout-logo-left">
-          <img src="../assets/img/shu_title.png">
+        <div >
+          <img src="../assets/img/logo.jpg" style="width:250px" >
         </div>
         <Menu :active-name="activeName"
               width="251px"

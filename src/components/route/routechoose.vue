@@ -66,8 +66,13 @@
                 <p
                   style="text-align:center;margin-top:0px;font-size:80px;color:rgb(77, 121, 243);"
                 >{{score.final}}</p>
+                 <p style="text-align:center;margin-bottom:10px;font-size:25px;font-weight:bold">始终点</p>
+                
               </div>
+              
+
             </div>
+            
           </Col>
           <Divider type="vertical" style="width:1px;height:270px;position:relative;left:-10px" />
           <Col span="13">
