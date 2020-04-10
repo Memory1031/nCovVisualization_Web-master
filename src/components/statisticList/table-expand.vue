@@ -136,7 +136,16 @@
                     },
                     tooltip: {
                         trigger: 'axis',
-                        formatter: '{b}<br />{a0}: {c0}%<br />{a1}: {c1}%'
+                        formatter: function(params) {
+                            console.log(params)
+                            let date = params[0].name + '</br>'
+                            params.forEach((item, index) => {
+                                let name = item.seriesName
+                                let number = item.data + '%'
+                                date = date + name + ": " + number + '</br>'
+                            })
+                            return date
+                        }
                     },
                     legend: {
                         data: ['治愈率','病死率']

@@ -20,9 +20,9 @@
           <MenuItem name="route">
             <span>返校风险评估</span>
           </MenuItem>
-          <MenuItem name="routetable">
-            <span>批量风险评估</span>
-          </MenuItem>
+<!--          <MenuItem name="routetable">-->
+<!--            <span>批量风险评估</span>-->
+<!--          </MenuItem>-->
           <MenuItem name="routechoose">
             <span>返校路径选择</span>
           </MenuItem>
