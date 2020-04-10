@@ -23,6 +23,11 @@
         props: {
             row: Object
         },
+        watch: {
+            row(){
+                this.init()
+            }
+        },
         data(){
             return{
                 cityName: '',

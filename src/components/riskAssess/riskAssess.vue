@@ -13,7 +13,7 @@
         no-data-text="无法检索到符合条件的城市信息"
         stripe border
         :loading="loading"
-        height="650"
+        height="650" @on-row-click="toggleTableExpand" ref="tableExpand"
         :columns="columns" :data="nowData"></Table>
       <Page :total="data.length" :page-size="10" @on-change="changepage" style="text-align: center"
             show-total show-elevator/>
@@ -110,6 +110,7 @@
                         res.data.data.forEach((item) => {
                               item.newParams = 'number';
                               item['number'] = num;
+                              item['_expanded'] = false
                               num++;
                               this.data.push(item)
                             if(this.data.length == 10){
@@ -151,6 +152,23 @@
                 //储存当前页
                 this.pageCurrent = index;
             },
+            toggleTableExpand(row, index) {
+                // this.$refs.tableExpand.toggleExpand(index);
+                if(this.nowData[index]._expanded == true) {
+                    this.nowData[index]._expanded = false
+                }
+                else {
+                    this.nowData[index]._expanded = true
+                    this.takeToFalse(index)
+                }
+            },
+            takeToFalse(index){
+                this.nowData.forEach((item, index2) => {
+                    if(index2 != index){
+                        item._expanded = false
+                    }
+                })
+            }
         }
     }
 </script>
