@@ -232,8 +232,8 @@
                     this.nowData[index]._expanded = false
                 }
                 else {
-                    this.nowData[index]._expanded = true
                     this.takeToFalse(index)
+                    this.nowData[index]._expanded = true
                 }
             },
             takeToFalse(index){

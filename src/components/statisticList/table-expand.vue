@@ -207,13 +207,15 @@
                 }).then((res) => {
                     if(res.data.code == 200){
                         res.data.data.forEach((item,index) => {
-                            this.date.push(item.date.slice(5))
-                            this.totalConfirm.push(item.totalconfirm)
-                            this.totalDead.push(item.totaldead)
-                            this.totalCure.push(item.totalheal)
-                            this.deadRate.push(this.toPoint(item.mortality))
-                            this.cureRate.push(this.toPoint(item.cureRate))
-                            this.remainConfirm.push(item.remainConfirm)
+                            if(this.date.length != res.data.data.length){
+                                this.date.push(item.date.slice(5))
+                                this.totalConfirm.push(item.totalconfirm)
+                                this.totalDead.push(item.totaldead)
+                                this.totalCure.push(item.totalheal)
+                                this.deadRate.push(this.toPoint(item.mortality))
+                                this.cureRate.push(this.toPoint(item.cureRate))
+                                this.remainConfirm.push(item.remainConfirm)
+                            }
                         })
                         myChart.hideLoading();
                         myChart.setOption({
