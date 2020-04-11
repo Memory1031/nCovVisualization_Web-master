@@ -8,7 +8,7 @@
         @on-change="changeDate"
         :options="options"
         placeholder="选择日期"
-        style="width: 8vw"
+        style="width: 8vw; margin-right: 5vw"
       ></DatePicker>
     </div>
     <div
