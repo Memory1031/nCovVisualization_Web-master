@@ -322,7 +322,7 @@
     <Modal v-model="modal1" width="50">
       <city-detail v-bind:factor="cityname" style="height:400px;position:relative;left:10%"></city-detail>
       <div slot="footer">
-        <Button type="primary" size="large" long @click="modal1=false;">确定</Button>
+        <Button type="primary" size="large" long @click="modal1=false">确定</Button>
       </div>
     </Modal>
   </div>
@@ -330,12 +330,11 @@
 
 <script>
 import axios from "axios";
-import expandRow from "./table-expand.vue";
 import CityDetail from "@/assets/citydetail.vue";
 import VDistpicker from "v-distpicker";
 export default {
   name: "routeDisplay",
-  components: { expandRow, VDistpicker, "city-detail": CityDetail },
+  components: { VDistpicker, "city-detail": CityDetail },
   data() {
     return {
       item: "",
@@ -654,6 +653,7 @@ export default {
         lines: doubleLineList
       };
       this.allPlan.push(onePlan);
+      console.log(this.allPlan)
     }
   },
   watch: {
@@ -672,7 +672,7 @@ export default {
 <style scoped lang="scss">
 @import "route";
 </style>
-<style>
+<style scoped>
 .tagtext .ivu-tag-dot-inner {
   position: relative;
   top: -4px;

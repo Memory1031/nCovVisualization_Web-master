@@ -6,11 +6,11 @@ import App from './App'
 import ViewUI from 'view-design';
 import 'view-design/dist/styles/iview.css';
 import echarts from 'echarts'
+import GeminiScrollbar from 'vue-gemini-scrollbar'
 import 'echarts/map/js/china'
 import XLSX from 'xlsx/dist/xlsx.full.min'
 import 'element-ui/lib/theme-chalk/index.css';
 import ElementUI from 'element-ui';
-import GeminiScrollbar from 'vue-gemini-scrollbar'
 import router from './router'
 
 Vue.use(GeminiScrollbar)

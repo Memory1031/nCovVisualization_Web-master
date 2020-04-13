@@ -457,67 +457,67 @@ export default {
   z-index: 999;
 }
 </style>
-<style>
-.ivu-tag-size-large {
-  height: 52px;
-  line-height: 40px;
-  padding: 0 12px;
-}
-.ivu-tag {
-  display: inline-block;
-  height: 43px;
-  line-height: 20px;
-  margin: 2px 4px 2px 0;
-  padding: 6px 8px;
-  border: 1px solid #e8eaec;
-  border-radius: 3px;
-  /* background: #130d0d; */
-  font-size: 36px;
-  vertical-align: middle;
-  opacity: 1;
-  overflow: hidden;
-}
-.ivu-table .demo-table-info-row td {
-  background-color: #2db7f5;
-  color: #fff;
-}
-.ivu-table .demo-table-error-row td {
-  background-color: #ff6600;
-  color: #fff;
-}
-.ivu-table td.demo-table-info-column {
-  font-weight: bold;
-  /* background-color: #cfcfce; */
-  color: rgb(0, 0, 0);
-}
-.ivu-table td.demo-table-info-column2 {
-  font-weight: bold;
-}
-.ivu-table .demo-table-info-cell-name {
-  background-color: #2db7f5;
-  color: #fff;
-}
-.ivu-table .demo-table-info-cell-age {
-  background-color: #c0bebd;
-  color: rgb(3, 3, 3);
-  font-weight: bold;
-}
-.ivu-table .demo-table-info-cell-address {
-  background-color: #187;
-  color: #fff;
-}
-.tagtext {
-  /* background:#000 !important; */
-}
-.ivu-tag-text {
-  position: relative;
-  top: 4px !important;
-  right: 3px;
-}
-.poptip {
-  /* z-index:999 !important; */
+<style scoped lang="scss">
+// .ivu-tag-size-large {
+//   height: 52px;
+//   line-height: 40px;
+//   padding: 0 12px;
+// }
+// .ivu-tag {
+//   display: inline-block;
+//   height: 43px;
+//   line-height: 20px;
+//   margin: 2px 4px 2px 0;
+//   padding: 6px 8px;
+//   border: 1px solid #e8eaec;
+//   border-radius: 3px;
+//   /* background: #130d0d; */
+//   font-size: 36px;
+//   vertical-align: middle;
+//   opacity: 1;
+//   overflow: hidden;
+// }
+// .ivu-table .demo-table-info-row td {
+//   background-color: #2db7f5;
+//   color: #fff;
+// }
+// .ivu-table .demo-table-error-row td {
+//   background-color: #ff6600;
+//   color: #fff;
+// }
+// .ivu-table td.demo-table-info-column {
+//   font-weight: bold;
+//   /* background-color: #cfcfce; */
+//   color: rgb(0, 0, 0);
+// }
+// .ivu-table td.demo-table-info-column2 {
+//   font-weight: bold;
+// }
+// .ivu-table .demo-table-info-cell-name {
+//   background-color: #2db7f5;
+//   color: #fff;
+// }
+// .ivu-table .demo-table-info-cell-age {
+//   background-color: #c0bebd;
+//   color: rgb(3, 3, 3);
+//   font-weight: bold;
+// }
+// .ivu-table .demo-table-info-cell-address {
+//   background-color: #187;
+//   color: #fff;
+// }
+// .tagtext {
+//   /* background:#000 !important; */
+// }
+// .ivu-tag-text {
+//   position: relative;
+//   top: 4px !important;
+//   right: 3px;
+// }
+// .poptip {
+//   /* z-index:999 !important; */
 
-  /* background:#000; */
-  /* position: absolute; */
-}
+//   /* background:#000; */
+//   /* position: absolute; */
+// }
 </style>

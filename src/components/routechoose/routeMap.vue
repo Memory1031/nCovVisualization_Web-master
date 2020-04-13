@@ -329,7 +329,7 @@ export default {
       transit: "",
       projecting: false,
       startAddress: {
-        address: "北京市",
+        address: "",
         lat: "",
         lng: "",
         city: "",
@@ -505,7 +505,7 @@ export default {
             return;
           }
           that.timeList.unshift(allTime);
-          if (that.timeList.length > 5) {
+          if (that.timeList.length > 3) {
             that.projecting = false;
             console.log(that.allPlan);
             return;
@@ -771,7 +771,7 @@ export default {
         ); //跨城换乘
         that.transit.setPolicy(that.trafficType.TransitPolicy[that.plan.city]); //城内换乘
         that.transit.search(that.startAddress.latLng, that.endAddress.latLng);
-      }, 200);
+      }, 300);
     },
     clear() {
       this.allPlan.splice(0, this.allPlan.length);

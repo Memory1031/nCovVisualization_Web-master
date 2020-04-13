@@ -9,6 +9,7 @@ import Route from '@/components/route/route'
 import RouteTable from '@/components/routetable/routetable'
 import RouteChoose from '@/components/routechoose/routechoose'
 import RouteMap from '@/components/routechoose/routeMap'
+
 Vue.use(Router)
 
 export default new Router({
