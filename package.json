@@ -19,6 +19,7 @@
     "v-distpicker": "^1.2.2",
     "view-design": "^4.0.2",
     "vue": "^2.5.2",
+    "vue-gemini-scrollbar": "^2.0.1",
     "vue-router": "^3.0.1",
     "xlsx": "^0.15.6"
   },

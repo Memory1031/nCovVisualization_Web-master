@@ -488,7 +488,6 @@ export default {
         citydata: "",
         transport: ""
       },
-      transformaddress: 0,
       vehicle: [
         {
           value: 0,
@@ -608,7 +607,6 @@ export default {
                     check[line.Tq[j].lat] = true;
                   }
                 }
-                that.transformaddress = temp.length;
                 for (let j = 0; j < temp.length; j++) {
                   var latLng = new qq.maps.LatLng(temp[j].lat, temp[j].lng);
 
@@ -813,7 +811,7 @@ export default {
         .then(res => {
           if (res.data.code == 200) {
             // console.log(res);
-            this.routeData = res.data.data.resultList;
+            // this.routeData = res.data.data.resultList;
             for (let i = 0; i < this.routeData.length; i++) {
               this.routeData.finalscore = parseFloat(
                 this.routeData.finalscore

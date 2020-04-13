@@ -66,13 +66,8 @@
                 <p
                   style="text-align:center;margin-top:0px;font-size:80px;color:rgb(77, 121, 243);"
                 >{{score.final}}</p>
-                 <p style="text-align:center;margin-bottom:10px;font-size:25px;font-weight:bold">始终点</p>
-                
               </div>
-              
-
             </div>
-            
           </Col>
           <Divider type="vertical" style="width:1px;height:270px;position:relative;left:-10px" />
           <Col span="13">
@@ -84,7 +79,7 @@
               <div style="height:230px;overflow-y:scroll">
                 <ul v-for="(item,index) in routeData" :key="index" style="list-style-type:none;">
                   <li v-if="item.type==0">
-                    <span class="navtrans-bus-icon bus" style="size:30px"></span>
+                    <span class="navtrans-bus-icon bus" style="size=30px"></span>
                     <span
                       style="font-size:18px;font-weight:bold;position:relative;left:5px;"
                     >{{index+1}}.公交车</span>
@@ -131,7 +126,7 @@
                     <Divider style="position:relative;margin-top:10px;margin-bottom:10px"></Divider>
                   </li>
                   <li v-if="item.type==1">
-                    <span class="navtrans-bus-icon bus" style="size:30px"></span>
+                    <span class="navtrans-bus-icon bus" style="size=30px"></span>
                     <span
                       style="font-size:18px;font-weight:bold;position:relative;left:5px;"
                     >{{index+1}}.地铁</span>

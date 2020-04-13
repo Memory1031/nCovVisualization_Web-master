@@ -8,24 +8,31 @@ import RiskAssess from '@/components/riskAssess/riskAssess'
 import Route from '@/components/route/route'
 import RouteTable from '@/components/routetable/routetable'
 import RouteChoose from '@/components/routechoose/routechoose'
-
+import RouteMap from '@/components/routechoose/routeMap'
 Vue.use(Router)
 
 export default new Router({
   mode: 'history',
-  routes: [
-    {
+  routes: [{
       path: '/',
       redirect: {
         name: 'statisticList'
       }
     },
     {
+      path: '/routeMap',
+
+      name: 'routeMap',
+
+      component: RouteMap
+    },
+    {
       path: '/home',
-      redirect: {name: 'statisticList'},
+      redirect: {
+        name: 'statisticList'
+      },
       component: Home,
-      children: [
-        {
+      children: [{
           path: 'statisticList',
           component: StatisticList,
           name: 'statisticList'

@@ -15,13 +15,9 @@
 </template>
 
 <script>
-import Choose from "./routechoose.vue";
-import Table from "./routetable.vue";
 import Table2 from "./routeDisplay.vue";
 export default {
   components: {
-    Choose,
-    Table,
     Table2
   }
 };

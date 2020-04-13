@@ -1,0 +1,29 @@
+.ivu-radio-group-button .ivu-radio-wrapper {
+  width: 122.5px;
+  position: relative;
+  border: 0px;
+  text-align: center;
+}
+
+/* .ivu-radio-group-button .ivu-radio-wrapper-checked:first-child {
+  border-color: rgb(255, 255, 255);
+} */
+
+/* .ivu-rate-star-chart.ivu-rate-star-full .ivu-rate-star-first,
+.ivu-rate-star-chart.ivu-rate-star-full .ivu-rate-star-second {
+  color: rgb(245, 10, 10);
+} */
+.ivu-btn>i, .ivu-btn:hover{
+  color:#000
+}
+.ivu-btn>i, .ivu-btn>span:after{
+  color:#000
+}
+.ivu-btn>i, .ivu-btn>span:before{
+  color:#000
+}
+.tagtext .ivu-tag-dot-inner {
+  position: relative;
+  top: -4px;
+  left: 2px;
+}

@@ -1,59 +1,39 @@
-.button {
-  margin-top: 10px !important;
-  margin-right: 30px;
-  margin-bottom: 10px !important;
-  float: right;
-  display: flex;
-}
-
-.refresh_button {
-  margin-right: 8px;
-  font-size: 16px;
-  height: 40px;
-}
-
-.ivu-input {
-  width: 220px;
-}
-
-.ivu-btn-primary {
-  font-size: 16px;
-  height: 40px;
-}
-
-.ivu-table-wrapper {
-  margin-top: 0px;
-  margin-left: 20px;
-  margin-right: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3), 0 0 10px rgba(0, 0, 0, 0.1) inset;
-}
-
 #container {
   height: 100vh;
-  width: 80vw;
   position: relative;
-  top: 2%;
-  left: 5px;
 }
 
-.navtrans-bus-icon.bus {
-  width: 13px;
-  height: 16px;
-  background-position: -1px -192px;
-  position: relative;
-  top: 4px;
+.box {
+  width: 368px;
+  height: 400px;
+  background: rgb(255, 255, 255);
+  visibility: visible;
+  opacity: 0;
+  transform: translateY(-140px);
+  transition: .8s;
+  z-index: 1;
+  position: absolute;
+  top: 220px;
+  left: 20px;
+}
 
+.show {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+  z-index: 1;
 }
 
 .title {
-  font-weight: bold;
-}
-
-.code-row-bg {
   position: relative;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 25px;
+  top: 15px;
+  // width:90%;
+  // background: #F26118;
+  padding-left: 20px;
+  color: rgb(228, 118, 63);
 }
 
 .plans {
@@ -66,64 +46,39 @@
     height: 75px;
     position: relative;
     top: 10px;
-    left: 2px;
+    left: 16px;
     border: 2px solid rgba(48, 108, 197, .5);
     border-radius: 0px 10px 10px 10px;
     margin-top: 15px;
 
     .theIndex {
       width: 20px;
-      height: 25px;
+      height: 20px;
       position: absolute;
       top: 0px;
       left: 0px;
       background: rgba(48, 108, 197, .5);
       z-index: 2;
       text-align: center;
-      font-size: 17px;
+      font-size: 15px;
       font-weight: bold;
     }
 
     .theBackground {
       width: 306px;
-      height: 25px;
+      height: 20px;
       background: rgba(48, 108, 197, .1);
       position: absolute;
       top: 0px;
       left: 20px;
       border-radius: 0px 10px 0px 0px;
-      .traffic{
-        position:absolute;
-        top:-2px;
-        left:15px;
-        span{
-          font-weight:bold;
-          font-size:20px;
-          color: #F26118;
-          left:24px;
-          position: relative;
-        }
-        .theicon{
-          position:absolute;
-          top:0px;
-          left:0px;
-          float:left;
-        }
-      }
-      .sicon {
-        position: absolute;
-        float: right;
-        right: 0px;
-        width:10%;
-      }
-      
     }
 
     .theBody {
       .method {
         position: relative;
         top: 20px;
-        margin-left: -70px;
+        margin-left: 40px;
         font-size: 17px;
         width: 90%;
 
@@ -136,7 +91,7 @@
       .method2 {
         position: absolute;
         top: 25px;
-        margin-left: 40px;
+        margin-left: 125px;
         font-size: 13px;
         width: 50%;
 
@@ -155,10 +110,10 @@
 
       .time {
         position: relative;
-        top: 35px;
-        margin-left: -120px;
+        top: 22px;
+        margin-left: 31px;
 
-        font-size: 18px;
+        font-size: 12px;
 
         span {
           font-weight: bold;
@@ -168,8 +123,8 @@
 
       .score {
         position: absolute;
-        right: 5px;
-        top: 30px;
+        right: 15px;
+        top: 25px;
 
       }
     }
@@ -192,8 +147,20 @@
   }
 }
 
+.my-scroll-bar {
+  height: 350px;
+  // width:370px;
+  position: relative;
 
+}
 
+.gm-scrollbar.-horizontal .thumb {
+  height: 0%;
+  opacity: 0;
+  width: 0px;
+  position: absolute;
+  visibility: hidden;
+}
 
 .sspecific {
   .noExpand {
@@ -202,12 +169,12 @@
     // text-overflow: ellipsis; //超过部分用省略号显示
     display: -webkit-box; //盒子模型
     -webkit-box-orient: vertical; //从顶部向底部垂直布置子元素
-
+    
     width: 300px;
     height: 75px;
     position: relative;
-    // top: 10px;
-    // left: 10px;
+    top: 10px;
+    left: 10px;
     border: 2px solid rgba(48, 108, 197, .5);
     border-radius: 0px 10px 10px 10px;
     margin-top: 15px;
@@ -215,7 +182,6 @@
     .table {
       top: 75px;
       position: relative;
-     
 
     }
 
@@ -244,13 +210,13 @@
       .traffic {
         position: relative;
         margin-top: 2px;
-        margin-left: 8px;
+        margin-left: 28px;
         font-size: 14px;
         width: 90%;
 
         span {
           font-weight: bold;
-          color: rgba(63, 60, 218, .9);
+          color: rgba(63, 60, 218,.9);
         }
       }
 
@@ -274,7 +240,6 @@
           //   color: #F26118;
         }
       }
-
       .sicon {
         position: absolute;
         top: 4px;
@@ -283,7 +248,7 @@
         font-size: 12px;
         float: right;
 
-
+       
       }
     }
 
@@ -345,24 +310,22 @@
   }
 
   .isExpand {
-
+    
     width: 300px;
     // height: 275px;
     position: relative;
     top: 10px;
-    // left: 10px;
+    left: 10px;
     border: 2px solid rgba(48, 108, 197, .5);
     border-radius: 0px 10px 10px 10px;
     margin-top: 15px;
-
     .table {
-      margin-top: 76px;
+      margin-top: 68px;
       position: relative;
-      width: 100%;
-      margin-left: 0%;
-      margin-bottom: 5px;
+      width:98%;
+      margin-left:1%;
+      margin-bottom:5px;
     }
-
     .theIndex {
       width: 20px;
       height: 25px;
@@ -388,13 +351,13 @@
       .traffic {
         position: relative;
         top: 2px;
-        margin-left: 8px;
+        margin-left: 28px;
         font-size: 14px;
         width: 90%;
 
         span {
           font-weight: bold;
-          color: rgba(63, 60, 218, .9);
+          color: rgba(63, 60, 218,.9);
         }
       }
 
@@ -418,7 +381,6 @@
           //   color: #F26118;
         }
       }
-
       .sicon {
         position: absolute;
         top: 4px;
@@ -427,7 +389,7 @@
         font-size: 12px;
         float: right;
 
-
+       
       }
     }
 
@@ -472,5 +434,6 @@
     }
   }
 
-
+  
 }
+
