@@ -66,7 +66,7 @@
                         key: "name"
                     },
                     {
-                        title: "累计境外输入型患者人数（单位：人）",
+                        title: "境外输入型患者人数（单位：人）",
                         key: "abroadInput"
                     }
                 ]
@@ -103,7 +103,7 @@
                 myChart.setOption({
                     // 进行相关配置
                     title: {
-                        text: "中国新型冠状病毒累计境外输入型患者人数分布图",
+                        text: "中国新型冠状病毒境外输入型患者人数分布图",
                         color: "#fff",
                         x: "center"
                     },
@@ -151,9 +151,9 @@
                         formatter: function(params) {
                             // console.log(params)
                             if (params.data == undefined) {
-                                return params.name + "</br>" + "累计境外输入型患者人数：缺少该地区患病人数数据";
+                                return params.name + "</br>" + "境外输入型患者人数：缺少该地区患病人数数据";
                             } else {
-                                return params.name + "</br>" + "累计境外输入型患者人数：" + params.data.value;
+                                return params.name + "</br>" + "境外输入型患者人数：" + params.data.value;
                             }
                         }
                     },

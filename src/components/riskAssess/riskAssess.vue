@@ -55,12 +55,12 @@
                             })
                         }
                     },
-                    {
-                        title: '#',
-                        key: 'number',
-                        width: 100,
-                        align: 'center'
-                    },
+                    // {
+                    //     title: '#',
+                    //     key: 'number',
+                    //     width: 100,
+                    //     align: 'center'
+                    // },
                     {
                         title: '省/直辖市',
                         key: 'provincename',

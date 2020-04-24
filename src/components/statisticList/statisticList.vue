@@ -60,7 +60,15 @@
                 cityList: [
                     {
                         value: '0',
-                        label: '确诊人数'
+                        label: '累计确诊人数'
+                    },
+                    {
+                        value: '7',
+                        label: '现存确诊人数'
+                    },
+                    {
+                        value: '6',
+                        label: '今日新增确诊人数'
                     },
                     {
                         value: '1',
@@ -78,10 +86,11 @@
                         value: '4',
                         label: '病死率'
                     },
-                    {
-                        value: '5',
-                        label: '每百万人确诊人数'
-                    }
+                    // {
+                    //     value: '5',
+                    //     label: '每百万人确诊人数'
+                    // },
+
                 ],
                 sortBy: '0',
                 sortWay: -1,
@@ -118,10 +127,16 @@
                         tooltip: true
                     },
                     {
-                        title: '确诊人数',
+                        title: '累计确诊人数',
                         key: 'totalconfirm',
                         align: 'center',
                         tooltip: true,
+                    },
+                    {
+                        title: '今日新增确诊人数',
+                        key: 'todayConfirm',
+                        align: 'center',
+                        tooltip: true
                     },
                     {
                         title: '治愈人数',
@@ -147,12 +162,12 @@
                         align: 'center',
                         tooltip: true,
                     },
-                    {
-                        title: '每百万人感染人数',
-                        key: 'confirmInMillion',
-                        align: 'center',
-                        tooltip: true,
-                    },
+                    // {
+                    //     title: '每百万人感染人数',
+                    //     key: 'confirmInMillion',
+                    //     align: 'center',
+                    //     tooltip: true,
+                    // },
                 ],
                 data: [],
             }

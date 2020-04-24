@@ -66,7 +66,7 @@
                         key: "name"
                     },
                     {
-                        title: "累计确诊人数（单位：人）",
+                        title: "近十四日新增确诊人数（单位：人）",
                         key: "confirm"
                     }
                 ]
@@ -103,7 +103,7 @@
                 myChart.setOption({
                     // 进行相关配置
                     title: {
-                        text: "中国新型冠状病毒累计确诊人数分布图",
+                        text: "中国新型冠状病毒近十四日新增确诊人数分布图",
                         color: "#fff",
                         x: "center"
                     },
@@ -137,11 +137,11 @@
                                 label: "0人感染或未查询到该地数据",
                                 color: "#EFEFEF"
                             },
-                            { start: 1, end: 100, label: "1-100人", color: "#F0CA93" },
-                            { start: 101, end: 500, label: "101-500人", color: "#F59112" },
-                            { start: 501, end: 1000, label: "501-1000人", color: "#EE5213" },
-                            { start: 1001, end: 5000, label: "1001-5000人", color: "#E92601" },
-                            { start: 5001, label: ">5000人", color: "#A81502" }
+                            { start: 1, end: 5, label: "1-5人", color: "#F0CA93" },
+                            { start: 6, end: 20, label: "6-20人", color: "#F59112" },
+                            { start: 21, end: 50, label: "21-50人", color: "#EE5213" },
+                            { start: 51, end: 100, label: "51-100人", color: "#E92601" },
+                            { start: 101, label: ">101人", color: "#A81502" }
                         ]
                     },
                     // 提示框，鼠标移入
@@ -151,9 +151,9 @@
                         formatter: function(params) {
                             // console.log(params)
                             if (params.data == undefined) {
-                                return params.name + "</br>" + "累计确诊人数：缺少该地区患病人数数据";
+                                return params.name + "</br>" + "近十四日新增确诊人数：缺少该地区患病人数数据";
                             } else {
-                                return params.name + "</br>" + "累计确诊人数：" + params.data.value;
+                                return params.name + "</br>" + "近十四日新增确诊人数：" + params.data.value;
                             }
                         }
                     },
@@ -193,7 +193,7 @@
                         res.data.data.provinceInfoList.forEach(item => {
                             dataList.push({
                                 name: (item.name),
-                                value: item.confirm
+                                value: item.growth
                             });
                         });
                         myChart.hideLoading();
