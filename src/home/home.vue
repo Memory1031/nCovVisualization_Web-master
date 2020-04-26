@@ -6,6 +6,9 @@
           <img src="../assets/img/logo.jpg" style="width:250px" />
         </div>
         <Menu :active-name="activeName" width="251px" @on-select="push">
+          <MenuItem name="dataSum">
+            <span>数据仪表盘</span>
+          </MenuItem>
           <MenuItem name="statisticList">
             <span>统计数据</span>
           </MenuItem>

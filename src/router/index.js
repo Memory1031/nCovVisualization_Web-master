@@ -9,6 +9,7 @@ import Route from '@/components/route/route'
 import RouteTable from '@/components/routetable/routetable'
 import RouteChoose from '@/components/routechoose/routechoose'
 import RouteMap from '@/components/routechoose/routeMap'
+import DataSum from '@/components/data/dataSum'
 
 Vue.use(Router)
 
@@ -17,7 +18,7 @@ export default new Router({
   routes: [{
       path: '/',
       redirect: {
-        name: 'statisticList'
+        name: 'dataSum'
       }
     },
     {
@@ -30,10 +31,15 @@ export default new Router({
     {
       path: '/home',
       redirect: {
-        name: 'statisticList'
+        name: 'dataSum'
       },
       component: Home,
       children: [{
+          path: 'dataSum',
+          component: DataSum,
+          name: 'dataSum'
+        },
+        {
           path: 'statisticList',
           component: StatisticList,
           name: 'statisticList'
