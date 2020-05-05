@@ -80,6 +80,7 @@
                         left: 'left',
                         data: ['省/市实时疫情数据', '境外输入']
                     },
+                    color : [ '#AEDFFF', 'orange'],
                     series: [
                         {
                             name: '数据组成',
@@ -113,7 +114,7 @@
                         myChart2.setOption({
                             series: {
                                 data: [
-                                    {value: res.data.data.covDate, name: '省/市实时疫情数据'},
+                                    {value: res.data.data.covData, name: '省/市实时疫情数据'},
                                     {value: res.data.data.abroadInput, name: '境外输入'}
                                 ]
                             }

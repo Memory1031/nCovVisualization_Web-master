@@ -133,6 +133,12 @@
                         tooltip: true,
                     },
                     {
+                        title: '现存确诊人数',
+                        key: 'remainConfirm',
+                        align: 'center',
+                        tooltip: true
+                    },
+                    {
                         title: '今日新增确诊人数',
                         key: 'todayConfirm',
                         align: 'center',

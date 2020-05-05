@@ -4,7 +4,7 @@
       <TabPane label="现存感染" class="markpage">
         <TabOne v-bind:selectedDate="selectedDate" v-on:titleChanged="reDate($event)"></TabOne>
       </TabPane>
-      <TabPane label="境外输入" class="markpage">
+      <TabPane label="当日新增境外输入" class="markpage">
         <TabThree v-bind:selectedDate="selectedDate" v-on:titleChanged="reDate($event)"></TabThree>
       </TabPane>
       <TabPane label="近十四日新增确诊" class="markpage">

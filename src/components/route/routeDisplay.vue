@@ -542,6 +542,7 @@ export default {
       this.nowData = [];
       this.loading = true;
       this.pageCurrent = pageNum
+      this.nums = 0;
       let provinceArea;
       if (this.province2 != "") {
         provinceArea = this.province2 + this.area;
