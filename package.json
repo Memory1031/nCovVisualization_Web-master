@@ -22,7 +22,7 @@
     "vue": "^2.5.2",
     "vue-gemini-scrollbar": "^2.0.1",
     "vue-router": "^3.0.1",
-    "xlsx": "^0.15.6"
+    "xlsx": "^0.17.0"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
